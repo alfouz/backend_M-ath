@@ -1,0 +1,1 @@
+Aquí se almacenará el archivo SLite para la base de datos
