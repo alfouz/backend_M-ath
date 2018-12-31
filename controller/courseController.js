@@ -261,7 +261,7 @@ class CourseController {
                     task.idlocal = taskJSON.id;
                     task.idleccion = idlesson;
                     task.descripcion = taskJSON.description;
-                    task.ecuation = taskJSON.ecuation;
+                    task.ecuacion = taskJSON.ecuation;
                     context.taskDao.create(task)
                     .then(function(resultCreateTask){
                         console.log("Creada tarea " + resultCreateTask);
