@@ -10,5 +10,6 @@ router.use('/lesson', require('./lessonRoutes'));
 router.use('/task', require('./taskRoutes'));
 router.use('/taskoption', require('./taskOptionRoutes'));
 router.use('/user', require('./userRoutes'));
+router.use('/result', require('./resultuserlessonRoutes'));
 
 module.exports = router;

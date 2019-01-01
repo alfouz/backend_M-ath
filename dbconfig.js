@@ -47,6 +47,13 @@ let init = function () {
         " id          INTEGER    PRIMARY KEY AUTOINCREMENT NOT NULL" +
         ")");
         
+    db.run("CREATE TABLE if not exists resultados (" +
+        "usuario    INTEGER REFERENCES usuarios (id) ON DELETE CASCADE ON UPDATE CASCADE NOT NULL," +
+        "idleccion     INTEGER REFERENCES lecciones (id) ON DELETE CASCADE ON UPDATE CASCADE NOT NULL," +
+        "timestamp BIGINT    NOT NULL," +
+        "percentcorrect INTEGER    NOT NULL," +
+        "PRIMARY KEY (usuario, idleccion, timestamp)" +
+        ")");
 };
 
 module.exports = {
