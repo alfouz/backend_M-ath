@@ -323,8 +323,8 @@ class CourseController {
                     lesson.idlocal = lessonJSON.id;
                     lesson.idcurso = idcourse;
                     lesson.titulo = lessonJSON.title;
-                    lesson.descripcion = lessonJSON.descripcion;
-                    lesson.duracion = lessonJSON.duracion;
+                    lesson.descripcion = lessonJSON.description;
+                    lesson.duracion = lessonJSON.duration;
                     context.lessonDao.create(lesson)
                     .then(function(resultCreatedLesson){
                         console.log("Creada lección " + lesson.titulo)

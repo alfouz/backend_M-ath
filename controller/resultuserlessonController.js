@@ -36,6 +36,13 @@ class ResultUserLessonController {
             .catch(this.common.serverError(res));
     };
 
+    countDiffUsersByCourse(req, res){
+        let idcurso = req.params.idcurso;
+        this.resultuserlessonDao.countDiffUsersByCourse(idcurso)
+        .then(this.common.findSuccess(res))
+        .catch(this.common.findError(res));
+    }
+
     create(req, res) {
         let resultuserlesson = new ResultUserLesson();
         resultuserlesson.user = req.body.user;

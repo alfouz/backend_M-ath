@@ -30,6 +30,15 @@ class LessonController {
         .catch(this.common.findError(res));
     }
 
+    findByIdLocalAndCourse(req, res){
+        let idcourse = req.params.idcourse;
+        let idlocal = req.params.idlocal;
+        console.log(idlocal, idcourse);
+        this.lessonDao.findByIdLocalAndCourse(idlocal, idcourse)
+        .then(this.common.findSuccess(res))
+        .catch(this.common.findError(res));
+    }
+
     findAll(res) {
         this.lessonDao.findAll()
             .then(this.common.findSuccess(res))

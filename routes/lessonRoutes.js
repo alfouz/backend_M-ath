@@ -22,6 +22,10 @@ router.get('/exists/:id', function (req, res) {
     lessonController.exists(req, res);
 });
 
+router.get('/courseid/:idcourse/:idlocal', function(req,res){
+    lessonController.findByIdLocalAndCourse(req,res);
+})
+
 router.get('/:id', function (req, res) {
     lessonController.findById(req, res);
 });

@@ -37,6 +37,14 @@ class ResultUserLessonDao {
         return this.common.findOne(sqlRequest);
     };
 
+    countDiffUsersByCourse(idcurso){
+        let sqlRequest = "SELECT COUNT(DISTINCT usuario) as users FROM resultados WHERE idleccion IN (SELECT id FROM lecciones WHERE idcurso = $idcurso)"
+        let sqlParams = {$idcurso: idcurso};
+        
+        return this.common.findOne(sqlRequest, sqlParams).then(row =>
+            row);
+    }
+
     
     create(ResultUserLesson) {
         let sqlRequest = "INSERT into resultados (usuario, idleccion, timestamp, percentcorrect) " +

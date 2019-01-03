@@ -15,12 +15,16 @@ router.get('/user/:iduser', function(req, res){
 })
 
 router.get('/lesson/:idleccion', function(req, res){
-    resultuserlessonController.findByUser(req, res);
+    resultuserlessonController.findByLeccion(req, res);
 })
 
 router.get('/count', function (req, res) {
     resultuserlessonController.countAll(res);
 });
+
+router.get('/countDiffUsersByCourse/:idcurso', function(req, res){
+    resultuserlessonController.countDiffUsersByCourse(req, res);
+})
 
 router.post('/create', function (req, res) {
     resultuserlessonController.create(req, res);
